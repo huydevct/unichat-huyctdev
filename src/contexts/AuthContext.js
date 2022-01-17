@@ -15,15 +15,15 @@ export const AuthProvider = ({ children }) => {
     auth.onAuthStateChanged((user) => {
       setUser(user);
       setLoading(false);
-      if(user) history.push("/chats");
+      if (user) history.push("/chats");
     });
   }, [user, history]);
 
-  const value = {user};
+  const value = { user };
 
   return (
-      <AuthContext.Provider value={value}>
-          {!loading && children}
-      </AuthContext.Provider>
-  )
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
 };
